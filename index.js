@@ -13,4 +13,4 @@ app.use(bodyParserMiddleWare);
 
 app.use("/auth", authRouter);
 
-// app.listen(PORT, () => console.log(`Server started in port: ${PORT}`));
+app.listen(PORT, () => console.log(`Server started in port: ${PORT}`));
