@@ -9,8 +9,9 @@ const app = express();
 
 app.use(cors());
 
-const bodyParserMiddleWare = express.json();
-app.use(bodyParserMiddleWare);
+// const bodyParserMiddleWare = express.json();
+// app.use(bodyParserMiddleWare);
+app.use(express.json());
 
 app.use("/auth", authRouter);
 app.use("/apartments", apartmentsRouter);
