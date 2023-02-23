@@ -27,15 +27,12 @@ module.exports = {
       },
       country: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       city: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       phone: {
         type: Sequelize.INTEGER,
-        allowNull: false,
       },
       isAdmin: {
         type: Sequelize.BOOLEAN,

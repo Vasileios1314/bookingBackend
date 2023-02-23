@@ -28,7 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       phone: {
         type: DataTypes.INTEGER,
-        allowNull: false,
       },
       password: {
         type: DataTypes.STRING,
@@ -36,11 +35,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       country: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       city: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       image: {
         type: DataTypes.STRING,
