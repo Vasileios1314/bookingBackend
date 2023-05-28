@@ -4,6 +4,7 @@ const Apartments = require("../models").apartment;
 const Comments = require("../models").comment;
 const Ratings = require("../models").rating;
 const Availability = require("../models").availability;
+const User = require("../models").user;
 
 const router = new Router();
 
@@ -22,7 +23,19 @@ router.get("/:id", async (req, res, next) => {
   try {
     const apartmentId = parseInt(req.params.id);
     const apartment = await Apartments.findByPk(apartmentId, {
-      include: [Comments, Ratings, Availability],
+      include: [
+        {
+          model: Comments,
+          include: [
+            {
+              model: User,
+              attributes: ["name", "country", "image"],
+            },
+          ],
+        },
+        Ratings,
+        Availability,
+      ],
     });
     if (apartment) {
       res.send(apartment);
